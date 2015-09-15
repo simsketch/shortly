@@ -18,7 +18,12 @@
     "start": "node server/app.js"
   },
   "dependencies": {
-    "express": "^4.13.3"
+    "base-converter": "^1.1.2",
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3",
+    "mongoose": "4.0.8",
+    "mongoose-auto-increment": "^4.0.0",
+    "morgan": "^1.6.1"
   },
   "devDependencies": {
     "gulp": "^3.9.0",

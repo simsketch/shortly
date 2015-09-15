@@ -3,10 +3,16 @@
 'use strict';
 
 let express = require('express');
+let bodyParser = require('body-parser');
+let logger = require('morgan');
 let mongoose = require('mongoose');
 let config = require('./config');
+let urlRouter = require('./routes/url');
 
 let app = express();
+app.use(bodyParser.json());
+app.use(logger(config.logFormat));
+app.use('/', urlRouter);
 
 mongoose.connect(config.database);
 let database = mongoose.connection;

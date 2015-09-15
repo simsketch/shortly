@@ -3,8 +3,11 @@
 'use strict';
 
 let mongoose = require('mongoose');
+let autoIncrement = require('mongoose-auto-increment');
 
-let Url = mongoose.model('Url', {
+autoIncrement.initialize(mongoose);
+
+let urlSchema = mongoose.Schema({
   shortUrl: {
     type: String,
     required: true
@@ -19,5 +22,8 @@ let Url = mongoose.model('Url', {
     default: Date.now
   }
 });
+urlSchema.plugin(autoIncrement.plugin, 'Url');
 
-module.exports = Url;
+let url = mongoose.model('Url', urlSchema);
+
+module.exports = url;
