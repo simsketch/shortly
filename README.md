@@ -4,8 +4,9 @@ A URL shortener built using the MEAN stack.
 
 ## Getting Started
 
-1. `$ npm install`
-2. `$ npm start`
+1. Run `mongod` in another terminal window.
+2. `npm install`
+3. `npm start`
 
 ### Create a New Short URL
 
