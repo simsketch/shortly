@@ -1,0 +1,17 @@
+{
+  "name": "shortly",
+  "description": "A URL shortener built using the MEAN stack.",
+  "authors": [
+    "Amit Burstein <amit.burstein@gmail.com> (http://amitburst.me)"
+  ],
+  "homepage": "https://github.com/amitburst/shortly",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/amitburst/shortly.git"
+  },
+  "dependencies": {
+    "bootstrap": "https://github.com/twbs/bootstrap.git#~4.0.0-alpha"
+  }
+}

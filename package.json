@@ -6,9 +6,9 @@
   "homepage": "https://github.com/amitburst/shortly",
   "license": "MIT",
   "private": true,
-  "repsitory": {
+  "repository": {
     "type": "git",
-    "url": "https://github.com/amitburst/shortly.git"
+    "url": "git://github.com/amitburst/shortly.git"
   },
   "bugs": {
     "url": "https://github.com/amitburst/shortly/issues",
