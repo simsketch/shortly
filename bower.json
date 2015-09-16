@@ -12,6 +12,7 @@
     "url": "git://github.com/amitburst/shortly.git"
   },
   "dependencies": {
+    "angular": "~1.4.5",
     "bootstrap": "https://github.com/twbs/bootstrap.git#~4.0.0-alpha"
   }
 }

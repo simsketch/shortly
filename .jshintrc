@@ -20,5 +20,8 @@
   "strict": true,
   "varstmt": true,
   "esnext": true,
-  "node": true
+  "node": true,
+  "globals": {
+    "angular": true
+  }
 }

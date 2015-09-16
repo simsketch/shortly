@@ -9,7 +9,6 @@ let sass = require('gulp-sass');
 let nodemon = require('gulp-nodemon');
 let useref = require('gulp-useref');
 let gulpif = require('gulp-if');
-let uglify = require('gulp-uglify');
 let minifyCss = require('gulp-minify-css');
 
 // Lints JavaScript files.
@@ -25,13 +24,13 @@ gulp.task('clean', function() {
 });
 
 // Builds all necessary files.
+// TODO(amitburst): Not playing nicely with AngularJS.
 gulp.task('build', ['clean', 'lint'], function() {
   let assets = useref.assets();
   return gulp.src('client/index.html')
     .pipe(assets)
     .pipe(gulpif('*.css', sass()))
     .pipe(gulpif('*.css', minifyCss()))
-    .pipe(gulpif('*.js', uglify()))
     .pipe(assets.restore())
     .pipe(useref())
     .pipe(gulp.dest('public'));
@@ -41,7 +40,7 @@ gulp.task('build', ['clean', 'lint'], function() {
 gulp.task('develop', function() {
   nodemon({
     script: 'server/app.js',
-    ext: 'js scss',
+    ext: 'html js scss',
     ignore: ['node_modules/**/*', 'client/bower_components/**/*', 'public/**/*'],
     tasks: ['build']
   });

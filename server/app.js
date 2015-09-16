@@ -12,6 +12,7 @@ let urlRouter = require('./routes/url');
 let app = express();
 app.use(bodyParser.json());
 app.use(logger(config.logFormat));
+app.use(express.static('public'));
 app.use('/', urlRouter);
 
 mongoose.connect(config.database);
