@@ -10,6 +10,7 @@ const ALPHABET = 'abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ123456789';
 
 let router = express.Router();
 
+// Find a long URL for the given short URL and redirects to it.
 router.get('/:shortUrl', function(req, res) {
   Url.findOne({shortUrl: req.params.shortUrl}, function(error, url) {
     if (error) {
@@ -21,6 +22,7 @@ router.get('/:shortUrl', function(req, res) {
   });
 });
 
+// Saves a new short URL to the database.
 router.post('/url', function(req, res) {
   // TODO(amitburst): Add URL, and other, validation.
   if (!req.body.longUrl) {
@@ -30,7 +32,6 @@ router.post('/url', function(req, res) {
 
   Url.nextCount(function(error, count) {
     if (error) {
-      console.log(error);
       res.send(500);
       return;
     }
@@ -42,7 +43,6 @@ router.post('/url', function(req, res) {
 
     url.save(function(error, url) {
       if (error) {
-        console.log(error);
         res.send(500);
         return;
       }
